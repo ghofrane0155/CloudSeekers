@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import tn.esprit.pidev.entities.evaluation.Answer;
 import tn.esprit.pidev.entities.evaluation.Score;
+import tn.esprit.pidev.entities.reclamation.Reclamtion;
+import tn.esprit.pidev.entities.ressources.Notification;
+import tn.esprit.pidev.entities.ressources.Ressource;
 
 import java.io.Serializable;
 import java.util.List;
@@ -28,7 +31,7 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     private TypeUser role;
     private String photo;
-
+/********evaluation*******************/
     @OneToMany(mappedBy="user")
     @JsonIgnore
     private List<Answer> listAnswer;
@@ -36,5 +39,17 @@ public class User implements Serializable {
     @OneToMany(mappedBy="user")
     @JsonIgnore
     private List<Score> listScore;
+/*************ressource*********************/
+    @JsonIgnore
+    @OneToMany(mappedBy = "auteur")
+    private List<Ressource> ressourcesPubliees;
+    @JsonIgnore
+    @OneToMany(mappedBy = "destinataire")
+    private List<Notification> notifications;
+/*************reclamation*********************/
+    @JsonIgnore
+    @OneToMany(mappedBy = "user") // user 1 ------ * reclamtion
+    private List<Reclamtion> reclamtionList;
+
 
 }
