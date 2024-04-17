@@ -9,7 +9,7 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import tn.esprit.pidev.entities.forum.NotificationEmail;
-import tn.esprit.pidev.exceptions.SpringSubforumException;
+import tn.esprit.pidev.services.forum.exceptions.SpringSubforumException;
 
 @Service
 @AllArgsConstructor

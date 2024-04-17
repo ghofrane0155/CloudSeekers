@@ -1,4 +1,4 @@
-package tn.esprit.pidev.mapper;
+package tn.esprit.pidev.services.forum.mapper;
 
 import com.github.marlonlom.utilities.timeago.TimeAgo;
 import org.mapstruct.Mapper;
@@ -10,8 +10,8 @@ import tn.esprit.pidev.entities.forum.Post;
 import tn.esprit.pidev.entities.forum.Subforum;
 import tn.esprit.pidev.entities.user.User;
 import tn.esprit.pidev.repository.forum.ICommentRepository;
-import tn.esprit.pidev.repository.user.IUserRepository;
 import tn.esprit.pidev.repository.forum.IVoteRepository;
+import tn.esprit.pidev.repository.user.IUserRepository;
 
 
 @Mapper(componentModel = "spring")

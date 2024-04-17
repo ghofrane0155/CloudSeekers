@@ -21,7 +21,7 @@ public class ControllerCommentaire {
 
     @PostMapping("/addCom/{ressourceId}/{userId}")
     public ResponseEntity<Commentaire> ajouterCommentaire(@RequestBody Commentaire comm,
-                                                          @PathVariable Long userId,
+                                                          @PathVariable Integer userId,
                                                           @PathVariable Long ressourceId) {
         Commentaire nouveauCommentaire = commentaire.addComment(comm, userId, ressourceId);
         return new ResponseEntity<>(nouveauCommentaire, HttpStatus.CREATED);

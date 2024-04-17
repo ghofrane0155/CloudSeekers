@@ -8,13 +8,13 @@ import tn.esprit.pidev.entities.forum.Subforum;
 import tn.esprit.pidev.dto.PostRequest;
 import tn.esprit.pidev.dto.PostResponse;
 import tn.esprit.pidev.entities.user.User;
-import tn.esprit.pidev.exceptions.PostNotFoundException;
-import tn.esprit.pidev.exceptions.SubforumNotFoundException;
-import tn.esprit.pidev.exceptions.UserNotFoundException;
-import tn.esprit.pidev.mapper.PostMapper;
+import tn.esprit.pidev.repository.user.IUserRepository;
+import tn.esprit.pidev.services.forum.exceptions.PostNotFoundException;
+import tn.esprit.pidev.services.forum.exceptions.SubforumNotFoundException;
+import tn.esprit.pidev.services.forum.exceptions.UserNotFoundException;
+import tn.esprit.pidev.services.forum.mapper.PostMapper;
 import tn.esprit.pidev.repository.forum.IPostRepository;
 import tn.esprit.pidev.repository.forum.ISubforumRepository;
-import tn.esprit.pidev.repository.user.IUserRepository;
 
 import java.util.List;
 

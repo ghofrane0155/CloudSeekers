@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import tn.esprit.pidev.entities.user.User;
 import tn.esprit.pidev.entities.evaluation.Question;
 import tn.esprit.pidev.entities.evaluation.Answer;
-import tn.esprit.pidev.repository.user.IUserRepository;
 import tn.esprit.pidev.repository.evaluation.IQuestionRepository;
 import tn.esprit.pidev.repository.evaluation.IAnswerRepository;
+import tn.esprit.pidev.repository.user.IUserRepository;
 
 import java.util.List;
 
@@ -44,7 +44,7 @@ public class GestionAnswerImpl implements IGestionAnswer {
 
     /**********************END CRUD*******************************************/
     @Override
-    public  Answer addReponseAndAssignToQuestionAndUser(Answer reponse,Long numQuestion,Long numUser){
+    public  Answer addReponseAndAssignToQuestionAndUser(Answer reponse,Long numQuestion,Integer numUser){
         User user= userRepo.findById(numUser).get();
         Question question= questionRepo.findById(numQuestion).get();
 
@@ -54,12 +54,12 @@ public class GestionAnswerImpl implements IGestionAnswer {
     }
 
     @Override
-    public List<Answer> getAllByUser (Long numUser){
+    public List<Answer> getAllByUser (Integer numUser){
         return reponseRepo.getAllanswersByUser(numUser);
     }
 
     @Override
-    public Answer getReponseByUserAndQuestion (Long numUser,Long numQuestion){
+    public Answer getReponseByUserAndQuestion (Integer numUser,Long numQuestion){
         return reponseRepo.getAnswerByUserAndQuestion(numUser,numQuestion);
     }
 

@@ -24,7 +24,7 @@ public class GestionMessageImpl implements IGestionMessage {
     @Autowired
     IDiscussionRepository iDiscussionRepository;
     @Override
-    public Message sendMessage(Long userSender, Long discussion, String message) {
+    public Message sendMessage(Integer userSender, Long discussion, String message) {
         Message messageo = new Message();
         messageo.setMessage(message);
 
@@ -59,7 +59,7 @@ public class GestionMessageImpl implements IGestionMessage {
     }
 
     @Override
-    public Message replyMessage(Long userSender, Long discussion,Long message, String reply) {
+    public Message replyMessage(Integer userSender, Long discussion,Long message, String reply) {
         Message messageo = new Message();
         messageo.setMessage(reply);
         messageo.setDateSent(LocalDateTime.now());

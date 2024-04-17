@@ -12,8 +12,8 @@ Reclamtion updateReclamtion(Reclamtion reclamtion);
 Reclamtion RetrieveReclamation(long idrec);
 void deleteReclamation(long idrec);
 /*addReclamtionAndAssignToUser*/
-Reclamtion addReclamtionAndAssignToUser(Reclamtion reclamtion,Long id);
-Reclamtion getReclamationByUserandReponse(Long id,long idrep);
+Reclamtion addReclamtionAndAssignToUser(Reclamtion reclamtion,Integer id);
+Reclamtion getReclamationByUserandReponse(Integer id,long idrep);
 List<Reclamtion> findAllReclamationsWithUserAndResponse();
 
 }

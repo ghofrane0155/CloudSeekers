@@ -18,7 +18,7 @@ public interface IGestionRessource {
     List<Ressource> getRessourceByCategory(Categorie categorie, Long topicId);
 
     @Transactional
-    Ressource addRessource(MultipartFile file, Ressource ressource, Long userId, String topicName) throws IOException;
+    Ressource addRessource(MultipartFile file, Ressource ressource, Integer userId, String topicName) throws IOException;
 
     @Transactional
     Ressource updateRessource(Long ressourceId, Ressource updatedRessource, MultipartFile newFile) throws IOException;

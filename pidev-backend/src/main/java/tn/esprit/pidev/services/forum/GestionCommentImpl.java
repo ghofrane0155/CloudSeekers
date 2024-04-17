@@ -8,12 +8,12 @@ import tn.esprit.pidev.entities.forum.Comment;
 import tn.esprit.pidev.entities.forum.NotificationEmail;
 import tn.esprit.pidev.entities.forum.Post;
 import tn.esprit.pidev.entities.user.User;
-import tn.esprit.pidev.exceptions.PostNotFoundException;
-import tn.esprit.pidev.exceptions.UserNotFoundException;
+import tn.esprit.pidev.repository.user.IUserRepository;
+import tn.esprit.pidev.services.forum.exceptions.PostNotFoundException;
+import tn.esprit.pidev.services.forum.exceptions.UserNotFoundException;
 import tn.esprit.pidev.repository.forum.ICommentRepository;
 import tn.esprit.pidev.repository.forum.IPostRepository;
-import tn.esprit.pidev.repository.user.IUserRepository;
-import tn.esprit.pidev.mapper.CommentMapper;
+import tn.esprit.pidev.services.forum.mapper.CommentMapper;
 
 import java.util.List;
 
