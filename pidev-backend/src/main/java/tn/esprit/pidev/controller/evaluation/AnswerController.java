@@ -2,36 +2,36 @@ package tn.esprit.pidev.controller.evaluation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.esprit.pidev.entities.evaluation.Reponse;
+import tn.esprit.pidev.entities.evaluation.Answer;
 import tn.esprit.pidev.services.evaluation.IGestionReponse;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/response")
+@RequestMapping("/answer")
 @CrossOrigin
-public class ReponseController {
+public class AnswerController {
     @Autowired
     IGestionReponse IgResponse;
 
 
     @GetMapping("/getAll")
-    public List<Reponse> retrieveAllReponses(){
+    public List<Answer> retrieveAllReponses(){
         return IgResponse.retrieveAllReponses();
     }
 
     @GetMapping("/getReponse/{id}")
-    public Reponse retrieveReponse (@PathVariable("id") Long numReponse){
+    public Answer retrieveReponse (@PathVariable("id") Long numReponse){
         return IgResponse.retrieveReponse(numReponse);
     }
 
     @PostMapping("/addReponse")
-    public Reponse addReponse(@RequestBody Reponse reponse){
+    public Answer addReponse(@RequestBody Answer reponse){
         return IgResponse.addReponse(reponse);
     }
 
     @PutMapping("/updateReponse")
-    public Reponse updateReponse (@RequestBody Reponse reponse){
+    public Answer updateReponse (@RequestBody Answer reponse){
         return IgResponse.updateReponse(reponse);
     }
 
@@ -41,13 +41,13 @@ public class ReponseController {
     }
 
     @PostMapping("addReponseAndAssignToQuestionAndUser/{numUser}/{numQuestion}")
-    public Reponse addReponseAndAssignToQuestionAndUser(@RequestBody Reponse reponse,@PathVariable("numQuestion") Long numQuestion,@PathVariable("numUser") Long numUser){
+    public Answer addReponseAndAssignToQuestionAndUser(@RequestBody Answer reponse,@PathVariable("numQuestion") Long numQuestion,@PathVariable("numUser") Long numUser){
         return IgResponse.addReponseAndAssignToQuestionAndUser(reponse,numQuestion,numUser);
     }
 
 
     @GetMapping("/getAllByUser/{id}")
-    public List<Reponse> getAllResponsesByUser (@PathVariable("id") Long numUser){
+    public List<Answer> getAllResponsesByUser (@PathVariable("id") Long numUser){
         return IgResponse.getAllByUser(numUser);
     }
 

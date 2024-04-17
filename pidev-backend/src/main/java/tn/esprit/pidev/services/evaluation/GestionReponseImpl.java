@@ -4,36 +4,36 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.pidev.entities.user.User;
 import tn.esprit.pidev.entities.evaluation.Question;
-import tn.esprit.pidev.entities.evaluation.Reponse;
+import tn.esprit.pidev.entities.evaluation.Answer;
 import tn.esprit.pidev.repository.user.IUserRepository;
 import tn.esprit.pidev.repository.evaluation.IQuestionRepository;
-import tn.esprit.pidev.repository.evaluation.IReponseRepository;
+import tn.esprit.pidev.repository.evaluation.IAnswerRepository;
 
 import java.util.List;
 
 @AllArgsConstructor
 @Service
 public class GestionReponseImpl implements IGestionReponse {
-    IReponseRepository reponseRepo;
+    IAnswerRepository reponseRepo;
     IUserRepository userRepo;
     IQuestionRepository questionRepo;
     @Override
-    public List<Reponse> retrieveAllReponses() {
+    public List<Answer> retrieveAllReponses() {
         return reponseRepo.findAll();
     }
 
     @Override
-    public Reponse retrieveReponse(Long numReponse) {
+    public Answer retrieveReponse(Long numReponse) {
         return reponseRepo.findById(numReponse).get();
     }
 
     @Override
-    public Reponse addReponse(Reponse reponse) {
+    public Answer addReponse(Answer reponse) {
         return reponseRepo.save(reponse);
     }
 
     @Override
-    public Reponse updateReponse(Reponse reponse) {
+    public Answer updateReponse(Answer reponse) {
         return reponseRepo.save(reponse);
     }
 
@@ -44,7 +44,7 @@ public class GestionReponseImpl implements IGestionReponse {
 
     /**********************END CRUD*******************************************/
     @Override
-    public  Reponse addReponseAndAssignToQuestionAndUser(Reponse reponse,Long numQuestion,Long numUser){
+    public  Answer addReponseAndAssignToQuestionAndUser(Answer reponse,Long numQuestion,Long numUser){
         User user= userRepo.findById(numUser).get();
         Question question= questionRepo.findById(numQuestion).get();
 
@@ -54,12 +54,12 @@ public class GestionReponseImpl implements IGestionReponse {
     }
 
     @Override
-    public List<Reponse> getAllByUser (Long numUser){
+    public List<Answer> getAllByUser (Long numUser){
         return reponseRepo.getAllanswersByUser(numUser);
     }
 
     @Override
-    public Reponse getReponseByUserAndQuestion (Long numUser,Long numQuestion){
+    public Answer getReponseByUserAndQuestion (Long numUser,Long numQuestion){
         return reponseRepo.getAnswerByUserAndQuestion(numUser,numQuestion);
     }
 

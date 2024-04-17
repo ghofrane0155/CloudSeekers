@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tn.esprit.pidev.entities.evaluation.Reponse;
+import tn.esprit.pidev.entities.evaluation.Answer;
 import tn.esprit.pidev.entities.evaluation.Score;
 
 import java.io.Serializable;
@@ -31,7 +31,7 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy="user")
     @JsonIgnore
-    private List<Reponse> listReponse;
+    private List<Answer> listAnswer;
 
     @OneToMany(mappedBy="user")
     @JsonIgnore

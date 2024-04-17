@@ -5,12 +5,12 @@ import org.springframework.stereotype.Service;
 import tn.esprit.pidev.entities.user.User;
 import tn.esprit.pidev.entities.evaluation.Question;
 import tn.esprit.pidev.entities.evaluation.Quiz;
-import tn.esprit.pidev.entities.evaluation.Reponse;
+import tn.esprit.pidev.entities.evaluation.Answer;
 import tn.esprit.pidev.entities.evaluation.Score;
 import tn.esprit.pidev.repository.user.IUserRepository;
 import tn.esprit.pidev.repository.evaluation.IQuestionRepository;
 import tn.esprit.pidev.repository.evaluation.IQuizRepository;
-import tn.esprit.pidev.repository.evaluation.IReponseRepository;
+import tn.esprit.pidev.repository.evaluation.IAnswerRepository;
 import tn.esprit.pidev.repository.evaluation.IScoreRepository;
 
 import java.time.LocalDateTime;
@@ -21,7 +21,7 @@ import java.util.List;
 public class GestionScoreImpl implements IGestionScore{
     IScoreRepository scoreRepo;
     IQuestionRepository questionRepo;
-    IReponseRepository reponseRepo;
+    IAnswerRepository reponseRepo;
 
     IQuizRepository quizRepo;
     IUserRepository userRepo;
@@ -46,7 +46,7 @@ public class GestionScoreImpl implements IGestionScore{
 
         for (int i = 0; i < totalQuestions; i++) {
             Question question = questions.get(i);
-            Reponse answer = reponseRepo.getAnswerByUserAndQuestion(user.getId(), question.getNumQuestion());
+            Answer answer = reponseRepo.getAnswerByUserAndQuestion(user.getId(), question.getNumQuestion());
 
             if (answer.getSelectedChoice().equals(question.getCorrectAnswer()))
                 pts = pts + question.getPoints();

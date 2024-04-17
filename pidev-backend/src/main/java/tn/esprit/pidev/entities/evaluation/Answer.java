@@ -15,10 +15,10 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Reponse implements Serializable {
+public class Answer implements Serializable {
     @Id
     @GeneratedValue
-    private Long numReponse;
+    private Long numAnswer;
     private String selectedChoice;
 
     @ManyToOne
