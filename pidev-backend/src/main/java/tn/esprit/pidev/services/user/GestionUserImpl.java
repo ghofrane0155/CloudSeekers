@@ -6,6 +6,7 @@ import tn.esprit.pidev.entities.user.User;
 import tn.esprit.pidev.repository.user.IUserRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GestionUserImpl implements IGestionUser{
@@ -19,5 +20,11 @@ public class GestionUserImpl implements IGestionUser{
     public  User update(User user){return ur.save(user);}
     @Override
     public User getById(Long id){return ur.getById(id);}
+
+    //forum
+    @Override
+    public Optional<User> getUserByEmail(String email) {
+        return ur.findByEmail(email);
+    }
 
 }
