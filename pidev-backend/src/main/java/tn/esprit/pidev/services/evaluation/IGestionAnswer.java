@@ -5,7 +5,7 @@ import tn.esprit.pidev.entities.evaluation.Answer;
 
 import java.util.List;
 
-public interface IGestionReponse {
+public interface IGestionAnswer {
     List<Answer> retrieveAllReponses();
     Answer retrieveReponse (Long numReponse);
     Answer addReponse(Answer reponse);

@@ -13,7 +13,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class GestionReponseImpl implements IGestionReponse {
+public class GestionAnswerImpl implements IGestionAnswer {
     IAnswerRepository reponseRepo;
     IUserRepository userRepo;
     IQuestionRepository questionRepo;

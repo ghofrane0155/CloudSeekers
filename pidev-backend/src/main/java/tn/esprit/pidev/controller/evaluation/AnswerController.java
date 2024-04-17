@@ -3,7 +3,7 @@ package tn.esprit.pidev.controller.evaluation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.pidev.entities.evaluation.Answer;
-import tn.esprit.pidev.services.evaluation.IGestionReponse;
+import tn.esprit.pidev.services.evaluation.IGestionAnswer;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin
 public class AnswerController {
     @Autowired
-    IGestionReponse IgResponse;
+    IGestionAnswer IgResponse;
 
 
     @GetMapping("/getAll")
