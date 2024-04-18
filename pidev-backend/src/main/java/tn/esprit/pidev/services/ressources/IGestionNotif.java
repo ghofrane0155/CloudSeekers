@@ -1,7 +1,7 @@
 package tn.esprit.pidev.services.ressources;
 
-import tn.esprit.pidev.entities.user.User;
 import tn.esprit.pidev.entities.ressources.Notification;
+import tn.esprit.pidev.entities.user.User;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
 package tn.esprit.pidev.services.ressources;
 
-import tn.esprit.pidev.entities.user.User;
-import tn.esprit.pidev.entities.ressources.Notification;
-import tn.esprit.pidev.repository.ressources.INotificationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tn.esprit.pidev.entities.ressources.Notification;
+import tn.esprit.pidev.entities.user.User;
+import tn.esprit.pidev.repository.ressources.INotificationRepository;
 
 import java.util.List;
 @Service

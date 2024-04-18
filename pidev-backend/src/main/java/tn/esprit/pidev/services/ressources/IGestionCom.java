@@ -1,7 +1,7 @@
 package tn.esprit.pidev.services.ressources;
 
-import tn.esprit.pidev.entities.ressources.Commentaire;
 import jakarta.transaction.Transactional;
+import tn.esprit.pidev.entities.ressources.Commentaire;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public interface IGestionCom {
 
 
     @Transactional
-    Commentaire addComment(Commentaire comm, Long userId, Long ressourceId);
+    Commentaire addComment(Commentaire comm, Integer userId, Long ressourceId);
 
 
     List<Commentaire> getCommentaireByRessourceId(Long ressourceId);

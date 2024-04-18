@@ -21,7 +21,7 @@ public interface IRessourceRepository extends JpaRepository<Ressource,Long> {
 
     List<Ressource> findByTopicId(Long topicId);
 
-    List<Ressource> findByAuteurId(Long userId);
+    List<Ressource> findByAuteurId(Integer userId);
 
     List<Ressource> getRessourceByCategorieAndTopicId(Categorie categorie, Long topicId);
 

@@ -1,4 +1,4 @@
-package tn.esprit.pidev.controller.evaluation;
+package tn.esprit.pidev.controller.user.evaluation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -41,13 +41,13 @@ public class AnswerController {
     }
 
     @PostMapping("addReponseAndAssignToQuestionAndUser/{numUser}/{numQuestion}")
-    public Answer addReponseAndAssignToQuestionAndUser(@RequestBody Answer reponse,@PathVariable("numQuestion") Long numQuestion,@PathVariable("numUser") Long numUser){
+    public Answer addReponseAndAssignToQuestionAndUser(@RequestBody Answer reponse,@PathVariable("numQuestion") Long numQuestion,@PathVariable("numUser") Integer numUser){
         return IgResponse.addReponseAndAssignToQuestionAndUser(reponse,numQuestion,numUser);
     }
 
 
     @GetMapping("/getAllByUser/{id}")
-    public List<Answer> getAllResponsesByUser (@PathVariable("id") Long numUser){
+    public List<Answer> getAllResponsesByUser (@PathVariable("id") Integer numUser){
         return IgResponse.getAllByUser(numUser);
     }
 

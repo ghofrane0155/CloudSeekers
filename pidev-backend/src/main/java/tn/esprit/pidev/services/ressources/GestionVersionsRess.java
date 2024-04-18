@@ -1,9 +1,9 @@
 package tn.esprit.pidev.services.ressources;
 
-import tn.esprit.pidev.entities.ressources.VersionRessource;
-import tn.esprit.pidev.repository.ressources.IVersionRessRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tn.esprit.pidev.entities.ressources.VersionRessource;
+import tn.esprit.pidev.repository.ressources.IVersionRessRepository;
 
 import java.util.List;
 

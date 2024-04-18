@@ -6,11 +6,18 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IGestionUser {
-    List<User> getAll();
+    List<User> findAll();
+    List<User> findAllActive();
     User add(User user);
     User update(User user);
-    User getById (Long id);
+    User findById (Integer id);
+    Optional<User> findByEmail (String email);
+    void delete(Integer id);
+    User findUserBymail(String email);
 
-    //forum
+    /****forum *********/
     Optional<User> getUserByEmail(String email);
+
+
 }
+

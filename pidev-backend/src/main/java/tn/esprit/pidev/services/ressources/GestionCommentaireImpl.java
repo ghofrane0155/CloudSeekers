@@ -35,7 +35,7 @@ public class GestionCommentaireImpl implements IGestionCom {
 
     @Override
     @Transactional
-    public Commentaire addComment(Commentaire comm, Long userId, Long ressourceId) {
+    public Commentaire addComment(Commentaire comm, Integer userId, Long ressourceId) {
         Optional<User> optionalUser = userRepository.findById(userId);
         Optional<Ressource> optionalRessource = ressourceRepo.findById(ressourceId);
         comm.setDatePublication(new Date());

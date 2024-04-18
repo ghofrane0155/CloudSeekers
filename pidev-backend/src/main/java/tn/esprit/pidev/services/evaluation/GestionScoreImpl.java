@@ -2,16 +2,16 @@ package tn.esprit.pidev.services.evaluation;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import tn.esprit.pidev.entities.user.User;
+import tn.esprit.pidev.entities.evaluation.Answer;
 import tn.esprit.pidev.entities.evaluation.Question;
 import tn.esprit.pidev.entities.evaluation.Quiz;
-import tn.esprit.pidev.entities.evaluation.Answer;
 import tn.esprit.pidev.entities.evaluation.Score;
-import tn.esprit.pidev.repository.user.IUserRepository;
+import tn.esprit.pidev.entities.user.User;
+import tn.esprit.pidev.repository.evaluation.IAnswerRepository;
 import tn.esprit.pidev.repository.evaluation.IQuestionRepository;
 import tn.esprit.pidev.repository.evaluation.IQuizRepository;
-import tn.esprit.pidev.repository.evaluation.IAnswerRepository;
 import tn.esprit.pidev.repository.evaluation.IScoreRepository;
+import tn.esprit.pidev.repository.user.IUserRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -36,7 +36,7 @@ public class GestionScoreImpl implements IGestionScore{
     }
 
 
-    public Score calculateScore(Long numQuiz, Long numUser) {
+    public Score calculateScore(Long numQuiz, Integer numUser) {
         Quiz quiz=quizRepo.findById(numQuiz).get();
         User user=userRepo.findById(numUser).get();
 

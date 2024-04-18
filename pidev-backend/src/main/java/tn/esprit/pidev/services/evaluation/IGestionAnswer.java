@@ -13,8 +13,8 @@ public interface IGestionAnswer {
     void removeReponse(Long numReponse);
 
 
-    Answer addReponseAndAssignToQuestionAndUser(Answer reponse,Long numQuestion,Long numUser);
-    List<Answer> getAllByUser (Long numUser);
-    Answer getReponseByUserAndQuestion (Long numUser,Long numQuestion);
+    Answer addReponseAndAssignToQuestionAndUser(Answer reponse,Long numQuestion,Integer numUser);
+    List<Answer> getAllByUser (Integer numUser);
+    Answer getReponseByUserAndQuestion (Integer numUser,Long numQuestion);
 
 }

@@ -23,7 +23,7 @@ import java.util.List;
 public class User implements Serializable {
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
     private String nom;
     private String prenom;
     private String email;
@@ -31,7 +31,10 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     private TypeUser role;
     private String photo;
-/********evaluation*******************/
+    private Boolean isArchived = false;
+    private Boolean isBanned = false;
+
+    /********evaluation*******************/
     @OneToMany(mappedBy="user")
     @JsonIgnore
     private List<Answer> listAnswer;
@@ -39,17 +42,17 @@ public class User implements Serializable {
     @OneToMany(mappedBy="user")
     @JsonIgnore
     private List<Score> listScore;
-/*************ressource*********************/
+    /*************ressource*********************/
     @JsonIgnore
     @OneToMany(mappedBy = "auteur")
     private List<Ressource> ressourcesPubliees;
     @JsonIgnore
     @OneToMany(mappedBy = "destinataire")
     private List<Notification> notifications;
-/*************reclamation*********************/
+    /*************reclamation*********************/
     @JsonIgnore
     @OneToMany(mappedBy = "user") // user 1 ------ * reclamtion
     private List<Reclamtion> reclamtionList;
-
+    /******************************************/
 
 }
