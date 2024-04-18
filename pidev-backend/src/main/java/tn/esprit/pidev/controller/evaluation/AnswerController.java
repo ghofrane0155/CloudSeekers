@@ -41,13 +41,13 @@ public class AnswerController {
     }
 
     @PostMapping("addReponseAndAssignToQuestionAndUser/{numUser}/{numQuestion}")
-    public Answer addReponseAndAssignToQuestionAndUser(@RequestBody Answer reponse,@PathVariable("numQuestion") Long numQuestion,@PathVariable("numUser") Integer numUser){
+    public Answer addReponseAndAssignToQuestionAndUser(@RequestBody Answer reponse,@PathVariable("numQuestion") Long numQuestion,@PathVariable("numUser") Long numUser){
         return IgResponse.addReponseAndAssignToQuestionAndUser(reponse,numQuestion,numUser);
     }
 
 
     @GetMapping("/getAllByUser/{id}")
-    public List<Answer> getAllResponsesByUser (@PathVariable("id") Integer numUser){
+    public List<Answer> getAllResponsesByUser (@PathVariable("id") Long numUser){
         return IgResponse.getAllByUser(numUser);
     }
 

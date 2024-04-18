@@ -1,4 +1,4 @@
-package tn.esprit.pidev.services.forum.exceptions;
+package tn.esprit.pidev.exceptions;
 
 public class SpringSubforumException extends RuntimeException {
     public SpringSubforumException(String exMessage, Exception exception) {

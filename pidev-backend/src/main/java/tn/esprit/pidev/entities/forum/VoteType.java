@@ -1,6 +1,6 @@
 package tn.esprit.pidev.entities.forum;
 
-import tn.esprit.pidev.services.forum.exceptions.SpringSubforumException;
+import tn.esprit.pidev.exceptions.SpringSubforumException;
 
 import java.util.Arrays;
 

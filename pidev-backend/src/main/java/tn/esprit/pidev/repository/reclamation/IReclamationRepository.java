@@ -12,7 +12,7 @@ import java.util.List;
 public interface IReclamationRepository extends JpaRepository<Reclamtion,Long> {
 /*Queries*/
     @Query("select r from Reclamtion r join r.responses res where r.user.id = :id and res.idrep = :idrep")
-    public Reclamtion getReclamationByUserAndResponse(@Param("id") Integer id, @Param("idrep") long idrep);
+    public Reclamtion getReclamationByUserAndResponse(@Param("id") Long id, @Param("idrep") long idrep);
 
     @Query("select r from Reclamtion r join fetch r.user join fetch r.responses")
     public List<Reclamtion> findAllReclamationsWithUserAndResponse();

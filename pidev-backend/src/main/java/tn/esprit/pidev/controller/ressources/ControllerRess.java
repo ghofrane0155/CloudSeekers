@@ -5,9 +5,9 @@ import tn.esprit.pidev.entities.ressources.Categorie;
 import tn.esprit.pidev.entities.ressources.Options;
 import tn.esprit.pidev.entities.ressources.Ressource;
 import tn.esprit.pidev.entities.ressources.Topic;
+import tn.esprit.pidev.repository.user.IUserRepository;
 import tn.esprit.pidev.repository.ressources.IRessourceRepository;
 import tn.esprit.pidev.repository.ressources.ItopicRepository;
-import tn.esprit.pidev.repository.user.IUserRepository;
 import tn.esprit.pidev.services.ressources.IGestionRessource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -70,7 +70,7 @@ public class ControllerRess {
                                 @RequestParam("titre") String titre,
                                 @RequestParam("description") String description,
                                 @RequestParam("categorie") String categorie,
-                                @RequestParam("userId") Integer userId,
+                                @RequestParam("userId") Long userId,
                                 @RequestParam("topicName") String topicName,
                                 @RequestParam("options")String options) throws IOException {
         Ressource ressource = new Ressource();

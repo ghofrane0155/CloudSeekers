@@ -9,9 +9,9 @@ import tn.esprit.pidev.entities.user.User;
 import tn.esprit.pidev.repository.forum.IPostRepository;
 import tn.esprit.pidev.repository.forum.IVoteRepository;
 import tn.esprit.pidev.repository.user.IUserRepository;
-import tn.esprit.pidev.services.forum.exceptions.PostNotFoundException;
-import tn.esprit.pidev.services.forum.exceptions.SpringSubforumException;
-import tn.esprit.pidev.services.forum.exceptions.UserNotFoundException;
+import tn.esprit.pidev.exceptions.PostNotFoundException;
+import tn.esprit.pidev.exceptions.SpringSubforumException;
+import tn.esprit.pidev.exceptions.UserNotFoundException;
 import tn.esprit.pidev.services.user.IGestionUser;
 
 import java.util.Optional;

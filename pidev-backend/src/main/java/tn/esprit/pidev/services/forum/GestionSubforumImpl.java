@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 import tn.esprit.pidev.dto.SubforumDto;
 import tn.esprit.pidev.entities.forum.Subforum;
 import tn.esprit.pidev.entities.user.User;
-import tn.esprit.pidev.repository.user.IUserRepository;
-import tn.esprit.pidev.services.forum.exceptions.SpringSubforumException;
-import tn.esprit.pidev.services.forum.exceptions.UserNotFoundException;
-import tn.esprit.pidev.services.forum.mapper.PostMapper;
-import tn.esprit.pidev.services.forum.mapper.SubforumMapper;
+import tn.esprit.pidev.exceptions.SpringSubforumException;
+import tn.esprit.pidev.exceptions.UserNotFoundException;
+import tn.esprit.pidev.mapper.PostMapper;
+import tn.esprit.pidev.mapper.SubforumMapper;
 import tn.esprit.pidev.repository.forum.IPostRepository;
 import tn.esprit.pidev.repository.forum.ISubforumRepository;
+import tn.esprit.pidev.repository.user.IUserRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

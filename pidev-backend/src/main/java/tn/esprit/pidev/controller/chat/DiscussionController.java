@@ -15,22 +15,22 @@ public class DiscussionController {
     IGestionDiscussion iGestionDiscussion ;
 
     @PostMapping("/startDiscussionDuo")
-    public Discussion cstartDiscussionDuo(@RequestParam Integer userStart,@RequestParam Integer userEnd) {
+    public Discussion cstartDiscussionDuo(@RequestParam Long userStart,@RequestParam Long userEnd) {
         return iGestionDiscussion.startDiscussionDuo(userStart,userEnd);
     }
 
     @PostMapping("/startDiscussionGroup")
-    public Discussion cstartDiscussionGroup(@RequestParam Integer userStart,@RequestParam String title, @RequestBody List<Integer> userList) {
+    public Discussion cstartDiscussionGroup(@RequestParam Long userStart,@RequestParam String title, @RequestBody List<Long> userList) {
         return iGestionDiscussion.startDiscussionGroup(userStart,title,userList);
     }
 
     @PostMapping("/startDiscussionCommunity")
-    public Discussion cstartDiscussionCommunity(@RequestParam Integer userStart,@RequestParam String title, @RequestBody List<Integer> userList,@RequestParam String discussionList) {
+    public Discussion cstartDiscussionCommunity(@RequestParam Long userStart,@RequestParam String title, @RequestBody List<Long> userList,@RequestParam String discussionList) {
         return iGestionDiscussion.startDiscussionCommunity(userStart,title,userList,discussionList);
     }
 
     @PutMapping("/addUserToDiscussion")
-    public Discussion caddUserToDiscussion(@RequestParam Long id, @RequestBody List<Integer> userList) {
+    public Discussion caddUserToDiscussion(@RequestParam Long id, @RequestBody List<Long> userList) {
         return iGestionDiscussion.addUserToDiscussion(id,userList);
     }
 
@@ -40,12 +40,12 @@ public class DiscussionController {
     }
 
     @GetMapping("/retrieveAllDiscussions")
-    public List<Discussion> cretrieveAllDiscussions(@RequestParam Integer id) {
+    public List<Discussion> cretrieveAllDiscussions(@RequestParam Long id) {
         return iGestionDiscussion.retrieveAllDiscussions(id);
     }
 
     @GetMapping("/retrieveAllCommunities")
-    public List<Discussion> cretrieveAllCommunities(@RequestParam Integer id) {
+    public List<Discussion> cretrieveAllCommunities(@RequestParam Long id) {
         return iGestionDiscussion.retrieveAllCommunities(id);
     }
 

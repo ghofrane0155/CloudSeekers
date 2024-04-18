@@ -8,6 +8,6 @@ import java.util.List;
 public interface IGestionScore {
     List<Score> retrieveAllScores();
     Score retrieveScore (Long numScore);
-    Score calculateScore(Long numQuiz, Integer numUser);
+    Score calculateScore(Long numQuiz, Long numUser);
 
 }

@@ -3,9 +3,11 @@ package tn.esprit.pidev.services.ressources;
 
 import tn.esprit.pidev.entities.user.User;
 import tn.esprit.pidev.entities.ressources.*;
+import tn.esprit.pidev.repository.user.IUserRepository;
 import tn.esprit.pidev.repository.ressources.INotificationRepository;
 import tn.esprit.pidev.repository.ressources.IRessourceRepository;
 import tn.esprit.pidev.repository.ressources.ItopicRepository;
+import tn.esprit.pidev.services.user.IGestionUser;
 import jakarta.transaction.Transactional;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +17,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import tn.esprit.pidev.repository.user.IUserRepository;
-import tn.esprit.pidev.services.user.IGestionUser;
 
 import java.io.File;
 import java.io.IOException;
@@ -60,7 +60,7 @@ public class GestionRessourceImpl implements IGestionRessource {
 
     @Override
     @Transactional
-    public Ressource addRessource(MultipartFile file, Ressource ressource, Integer userId, String topicName) throws IOException {
+    public Ressource addRessource(MultipartFile file, Ressource ressource, Long userId, String topicName) throws IOException {
         try {
             Optional<User> optionalUser = userRepository.findById(userId);
             if (!optionalUser.isPresent()) {

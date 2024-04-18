@@ -11,7 +11,7 @@ public interface IGestionCom {
 
 
     @Transactional
-    Commentaire addComment(Commentaire comm, Integer userId, Long ressourceId);
+    Commentaire addComment(Commentaire comm, Long userId, Long ressourceId);
 
 
     List<Commentaire> getCommentaireByRessourceId(Long ressourceId);

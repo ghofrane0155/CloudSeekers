@@ -19,7 +19,7 @@ public class GestionReactionImpl implements IGestionReaction {
     @Autowired
     IReactionRepository iReactionRepository;
     @Override
-    public Reaction addReaction (Integer user, Long message, String reaction){
+    public Reaction addReaction (Long user, Long message, String reaction){
     Reaction reactiono = new Reaction();
         reactiono.setReaction(reaction);
         reactiono.setDateReact(LocalDateTime.now());

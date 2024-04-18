@@ -1,4 +1,4 @@
-package tn.esprit.pidev.services.forum.mapper;
+package tn.esprit.pidev.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

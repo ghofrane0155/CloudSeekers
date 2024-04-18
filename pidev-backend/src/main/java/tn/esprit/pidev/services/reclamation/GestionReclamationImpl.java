@@ -41,7 +41,7 @@ public class GestionReclamationImpl implements IGestionReclamation {
     }
 
     @Override
-    public Reclamtion addReclamtionAndAssignToUser(Reclamtion reclamtion, Integer id) {
+    public Reclamtion addReclamtionAndAssignToUser(Reclamtion reclamtion, Long id) {
         User user=iUserRepository.findById(id).get();
         reclamtion.setUser(user);
         return iReclamationRepository.save(reclamtion);
@@ -49,7 +49,7 @@ public class GestionReclamationImpl implements IGestionReclamation {
     }
     /*getReclamationByUserandReponse*/
     @Override
-    public Reclamtion getReclamationByUserandReponse(Integer id, long idrep) {
+    public Reclamtion getReclamationByUserandReponse(Long id, long idrep) {
         return iReclamationRepository.getReclamationByUserAndResponse(id,idrep);
     }
 

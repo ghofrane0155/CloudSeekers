@@ -19,7 +19,7 @@ public class GestionDiscussionImpl implements IGestionDiscussion {
     @Autowired
     IUserRepository iUserRepository;
     @Override
-    public Discussion startDiscussionDuo(Integer userStart, Integer userEnd) {
+    public Discussion startDiscussionDuo(Long userStart, Long userEnd) {
         Discussion discussion = new Discussion();
         discussion.setTypeDiscussion(TypeDiscussion.Duo);
         User userEndo = iUserRepository.findById(userEnd).get() ;
@@ -32,12 +32,12 @@ public class GestionDiscussionImpl implements IGestionDiscussion {
     }
 
     @Override
-    public Discussion startDiscussionGroup(Integer userStart, String title, List<Integer> userList) {
+    public Discussion startDiscussionGroup(Long userStart, String title, List<Long> userList) {
         Discussion discussion = new Discussion();
         discussion.setTypeDiscussion(TypeDiscussion.Group);
         discussion.setTitle(title);
         discussion.getUsers().add(iUserRepository.findById(userStart).get());
-        for (Integer user : userList) {
+        for (Long user : userList) {
             discussion.getUsers().add(iUserRepository.findById(user).get());
         }
         discussion.setDateStart(LocalDateTime.now());
@@ -46,12 +46,12 @@ public class GestionDiscussionImpl implements IGestionDiscussion {
     }
 
     @Override
-    public Discussion startDiscussionCommunity(Integer userStart, String title, List<Integer> userList, String discussionList) {
+    public Discussion startDiscussionCommunity(Long userStart, String title, List<Long> userList, String discussionList) {
         Discussion discussion = new Discussion();
         discussion.setTypeDiscussion(TypeDiscussion.Community);
         discussion.setTitle(title);
         discussion.getUsers().add(iUserRepository.findById(userStart).get());
-        for (Integer user : userList) {
+        for (Long user : userList) {
             discussion.getUsers().add(iUserRepository.findById(user).get());
         }
 
@@ -73,9 +73,9 @@ public class GestionDiscussionImpl implements IGestionDiscussion {
     }
 
     @Override
-    public Discussion addUserToDiscussion(Long id, List<Integer> userList) {
+    public Discussion addUserToDiscussion(Long id, List<Long> userList) {
         Discussion discussion = iDiscussionRepository.findById(id).get();
-        for (Integer user : userList) {
+        for (Long user : userList) {
             discussion.getUsers().add(iUserRepository.findById(user).get());
         }
         return iDiscussionRepository.save(discussion) ;
@@ -99,12 +99,12 @@ public class GestionDiscussionImpl implements IGestionDiscussion {
         return iDiscussionRepository.save(discussion) ;
     }
 
-    public List<Discussion> retrieveAllDiscussions(Integer id){
+    public List<Discussion> retrieveAllDiscussions(Long id){
         User user = iUserRepository.findById(id).get();
         return iDiscussionRepository.findByUsersContainingAndArchivedIsFalseAndTypeDiscussionIsNot(user,TypeDiscussion.Community);
     }
 
-    public List<Discussion> retrieveAllCommunities(Integer id){
+    public List<Discussion> retrieveAllCommunities(Long id){
         User user = iUserRepository.findById(id).get();
         return iDiscussionRepository.findByUsersContainingAndArchivedIsFalseAndTypeDiscussionIs(user,TypeDiscussion.Community);
 

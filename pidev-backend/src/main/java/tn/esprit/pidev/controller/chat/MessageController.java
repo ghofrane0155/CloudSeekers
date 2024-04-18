@@ -15,7 +15,7 @@ public class MessageController {
     IGestionMessage iGestionMessage ;
 
     @PostMapping("/sendMessage")
-    public Message csendMessage(@RequestParam Integer userSender,@RequestParam Long discussion,@RequestBody String message) {
+    public Message csendMessage(@RequestParam Long userSender,@RequestParam Long discussion,@RequestBody String message) {
         return iGestionMessage.sendMessage(userSender,discussion,message);
     }
 
@@ -30,7 +30,7 @@ public class MessageController {
     }
 
     @PostMapping("/replyMessage")
-    public Message creplyMessage(@RequestParam Integer userSender,@RequestParam Long discussion,@RequestParam Long message,@RequestBody String reply) {
+    public Message creplyMessage(@RequestParam Long userSender,@RequestParam Long discussion,@RequestParam Long message,@RequestBody String reply) {
         return iGestionMessage.replyMessage(userSender,discussion,message,reply);
     }
 

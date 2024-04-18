@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface IAnswerRepository extends JpaRepository<Answer,Long> {
     @Query("select r from Answer r where r.user.id=:numUser")
-    public List<Answer> getAllanswersByUser(@Param("numUser") Integer numU);
+    public List<Answer> getAllanswersByUser(@Param("numUser") Long numU);
 
     @Query("select r from Answer r where r.user.id=:numUser and r.question.numQuestion=:numQuestion")
-    public Answer getAnswerByUserAndQuestion(@Param("numUser") Integer numU,@Param("numQuestion") Long numQ);
+    public Answer getAnswerByUserAndQuestion(@Param("numUser") Long numU,@Param("numQuestion") Long numQ);
 }

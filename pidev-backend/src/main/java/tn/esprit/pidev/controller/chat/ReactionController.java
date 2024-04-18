@@ -12,7 +12,7 @@ public class ReactionController {
     IGestionReaction iGestionReaction ;
 
     @PostMapping("/addReaction")
-    public Reaction caddReaction(@RequestParam Integer user, @RequestParam Long message, @RequestBody String reaction) {
+    public Reaction caddReaction(@RequestParam Long user, @RequestParam Long message, @RequestBody String reaction) {
         return iGestionReaction.addReaction(user,message,reaction);
     }
 
